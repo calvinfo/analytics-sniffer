@@ -1,0 +1,20 @@
+{
+  "name": "Analytics Sniffer",
+  "version": "0.0.0",
+  "manifest_version": 2,
+  "page_action": {
+    "default_icon": "images/segmentio.ico"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>", "http://*/*", "https://*/*"],
+    "js": ["analytics-sniffer.js"],
+    "run_at": "document_end"
+  }],
+  "background":{
+    "scripts":["background.js"],
+    "persistent":false
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
